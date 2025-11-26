@@ -37,7 +37,26 @@ public class Utilidades {
      */
     public static int convertirColumna(String coord) {
        // TODO
-        return -1;
+        char  coordenada = coord.charAt(0);
+        if(coordenada == 'A'){
+            return 0;
+        }else if(coordenada == 'B'){
+            return 1;
+        }else if(coordenada == 'C'){
+            return 2;
+        }else if(coordenada == 'D'){
+            return 3;
+        }else if(coordenada == 'E'){
+            return 4;
+        }else if(coordenada == 'F'){
+            return 5;
+        }else if(coordenada == 'G'){
+            return 6;
+        }else if(coordenada == 'H'){
+            return 7;
+        }else{
+            return -1;
+        }
     }
 
     /**
