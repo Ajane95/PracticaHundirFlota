@@ -21,9 +21,13 @@ public class Utilidades {
      */
     public static int convertirFila(String coord) {
         // TODO: extraer la parte numérica y convertirla a int
-
-
-        return -1;
+        char coordenada = coord.charAt(0);
+        int fila = Character.getNumericValue(coordenada);
+        if (fila >= 0 && fila <= 7){
+            return fila;
+        }else{
+            return -1;
+        }
     }
 
     /**
