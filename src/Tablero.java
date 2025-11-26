@@ -11,6 +11,7 @@ public class Tablero {
         for(int i = 0; i < filas; i++){
             for(int ; columnas; ++){
                 tablero[][] = -1;
+                
             }
         }
         return null;
