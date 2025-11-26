@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Utilidades {
 
     private static final Scanner SC = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     /**
      * Devuelve un número entero aleatorio entre min y max (ambos incluidos).
@@ -39,7 +40,6 @@ public class Utilidades {
      * Lee una línea de texto de la entrada estándar.
      */
     public static String leerLinea() {
-        Scanner teclado = new Scanner(System.in);
         return SC.nextLine();
     }
 }
