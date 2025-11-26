@@ -21,6 +21,7 @@ public class Utilidades {
     public static int convertirFila(String coord) {
         // TODO: extraer la parte numérica y convertirla a int
 
+
         return -1;
     }
 
@@ -38,6 +39,7 @@ public class Utilidades {
      * Lee una línea de texto de la entrada estándar.
      */
     public static String leerLinea() {
+        Scanner teclado = new Scanner(System.in);
         return SC.nextLine();
     }
 }
