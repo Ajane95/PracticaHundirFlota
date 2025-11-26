@@ -7,6 +7,12 @@ public class Tablero {
      */
     public static int[][] crearTableroBarcos(int filas, int columnas) {
         // TODO
+        int[][] tablero = new int[filas][columnas];
+        for(int i = 0; i < filas; i++){
+            for(int ; columnas; ++){
+                tablero[][] = -1;
+            }
+        }
         return null;
     }
 
