@@ -21,8 +21,16 @@ public class Tablero {
      */
     public static char[][] crearTableroDisparos(int filas, int columnas) {
         // TODO
-        return null;
+        char[][] tablero = new char[filas][columnas];
+        for(int i = 0; i < filas; i++){
+            for(int j = 0; j < columnas; j++){
+                tablero[i][j] = '~';
+            }
+        }
+        return tablero;
     }
+       
+
 
     /**
      * Muestra un tablero de disparos (del jugador o de la CPU).
