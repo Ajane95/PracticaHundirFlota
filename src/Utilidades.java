@@ -23,7 +23,7 @@ public class Utilidades {
         // TODO: extraer la parte numérica y convertirla a int
         char coordenada = coord.charAt(0);
         int fila = Character.getNumericValue(coordenada);
-        if (fila >= 0 && fila <= 7){
+        if (fila >= 0 && fila <= 9){
             return fila;
         }else{
             return -1;
@@ -54,6 +54,10 @@ public class Utilidades {
             return 6;
         }else if(coordenada == 'H'){
             return 7;
+        }else if(coordenada == 'I'){
+            return 8;
+        }else if(coordenada == 'J'){
+            return 9;
         }else{
             return -1;
         }
