@@ -121,6 +121,8 @@ public class Tablero {
      */
     public static boolean esCoordenadaValida(int fila, int columna, int filas, int columnas) {
          // TODO
-        return false;
+        boolean filaValida = fila >= 0 && fila <= filas;
+        boolean columnaValida = columna >= 0 && columna <= columnas;
+        return filaValida && columnaValida;
     }
 }
