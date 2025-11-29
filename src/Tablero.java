@@ -44,16 +44,18 @@ public class Tablero {
         int filas = tableroDisparos.length;
         int columnas = tableroDisparos[0].length;
 
-        System.out.println("");
+        System.out.println("   ");
         for(int j = 0; j < columnas; j++){
-            System.out.println("Columna " + (j+1));
+            System.out.print(j + " ");
         }
+        System.out.println();
 
         for(int i = 0; i < filas; i++){
-            System.out.println("Fila " + (i+1));
+            System.out.print(i + " ");
             for(int j = 0; j < columnas; j++){
-                System.out.println(tableroDisparos[i][j]);
+                System.out.print(tableroDisparos[i][j] + " ");
             }
+            System.out.println();
         }
 
     }
