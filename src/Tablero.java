@@ -77,6 +77,21 @@ public class Tablero {
      */
     public static void mostrarTableroConBarcos(int[][] tableroBarcos, char[][] tableroDisparosCPU) {
         // TODO
+        int filas = tableroBarcos.length;
+        int columnas = tableroBarcos[0].length;
+
+        System.out.print("   ");
+        for(int j = 0; j < columnas; j++){
+            System.out.print(j + " ");
+        }
+        System.out.println();
+
+        for(int i = 0; i < filas; i++){
+            System.out.println(i + " ");
+
+            for(int j = 0; j < columnas; j++){
+                char simbolo;
+        }
     }
 
     /**
