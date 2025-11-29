@@ -6,7 +6,7 @@ public class Disparos {
      * para evitar disparar en zonas que ya se han probado.
      */
     public static boolean yaDisparado(char[][] tableroDisparos, int fila, int columna) {
-        return tableroDisparos[fila][columna] != '~';
+        return tableroDisparos[fila][columna] != '.';
     }
 
     /**
