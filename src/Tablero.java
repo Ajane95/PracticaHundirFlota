@@ -87,10 +87,32 @@ public class Tablero {
         System.out.println();
 
         for(int i = 0; i < filas; i++){
-            System.out.println(i + " ");
+            System.out.print(i + " ");
 
             for(int j = 0; j < columnas; j++){
                 char simbolo;
+
+                if (tableroBarcos[i][j] == -1){
+                    if(tableroDisparosCPU[i][j] == '.'){
+                        simbolo = '.';
+                        System.out.print(simbolo + " ");
+                    }else{
+                    simbolo ='~';
+                        System.out.print(simbolo + " ");
+                    }
+                }else{
+                    if(tableroDisparosCPU[i][j] == '.'){
+                        System.out.print(tableroBarcos[i][j] + " ");
+                    }else if(tableroDisparosCPU[i][j] == 'T'){
+                        simbolo = 'T';
+                        System.out.print(simbolo + " ");
+                    }else{
+                        simbolo = 'H';
+                        System.out.print(simbolo + " ");
+                    }
+                }
+            }
+            System.out.println();
         }
     }
 
