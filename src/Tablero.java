@@ -44,7 +44,7 @@ public class Tablero {
         int filas = tableroDisparos.length;
         int columnas = tableroDisparos[0].length;
 
-        System.out.println("   ");
+        System.out.print("   ");
         for(int j = 0; j < columnas; j++){
             System.out.print(j + " ");
         }
