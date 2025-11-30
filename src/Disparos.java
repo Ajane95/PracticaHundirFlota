@@ -35,14 +35,17 @@ public class Disparos {
             tableroDisparos[fila][columna] = 'A';
             return false;
         }else{
-            impactosBarco[idBarco] = impactosBarco[idBarco]++;
+            impactosBarco[idBarco]++;
 
             if(impactosBarco[idBarco] < tamanosBarco[idBarco]){
                 tableroDisparos[fila][columna] = 'T';
                 return false;
-            }else{
-                tableroDisparos[fila][columna] = 'F';
+
+            }else if(impactosBarco[idBarco] == tamanosBarco[idBarco]){
+                tableroDisparos[fila][columna] = 'H';
                 return true;
+            } else{
+                return false;
             }
         }
 
