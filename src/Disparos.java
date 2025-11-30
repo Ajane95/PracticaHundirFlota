@@ -42,9 +42,16 @@ public class Disparos {
                 return false;
 
             }else if(impactosBarco[idBarco] == tamanosBarco[idBarco]){
-                tableroDisparos[fila][columna] = 'H';
+                for (int i=0; i < tableroBarcos.length; i++){
+                    for (int j = 0; j < tableroBarcos.length; j++){
+                        if (tableroBarcos[i][j] == idBarco){
+                            tableroDisparos[i][j]='H';
+
+                        }
+                    }
+                }
                 return true;
-            } else{
+            }else{
                 return false;
             }
         }
