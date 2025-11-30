@@ -29,6 +29,22 @@ public class Disparos {
             int[] tamanosBarco
     ) {
         // TODO
-        return true;
+        int idBarco= tableroBarcos[fila][columna];
+
+        if(idBarco == -1){
+            tableroDisparos[fila][columna] = 'A';
+            return false;
+        }else{
+            impactosBarco[idBarco] = impactosBarco[idBarco]++;
+
+            if(impactosBarco[idBarco] < tamanosBarco[idBarco]){
+                tableroDisparos[fila][columna] = 'T';
+                return false;
+            }else{
+                tableroDisparos[fila][columna] = 'F';
+                return true;
+            }
+        }
+
     }
 }
