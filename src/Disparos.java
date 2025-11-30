@@ -43,10 +43,9 @@ public class Disparos {
 
             }else if(impactosBarco[idBarco] == tamanosBarco[idBarco]){
                 for (int i=0; i < tableroBarcos.length; i++){
-                    for (int j = 0; j < tableroBarcos.length; j++){
+                    for (int j = 0; j < tableroBarcos[0].length; j++){
                         if (tableroBarcos[i][j] == idBarco){
                             tableroDisparos[i][j]='H';
-
                         }
                     }
                 }
