@@ -64,6 +64,7 @@ public class Main {
                 // Mostrar tableros relevantes
                 System.out.println("Tu tablero (tus barcos):");
                 // TODO: imprime el tablero
+                Tablero.mostrarTableroConBarcos(tableroBarcosJugador,tableroDisparosJugador);
 
                 System.out.println("Tus disparos sobre la CPU:");
                 // TODO: imprime los disparos sobre la CPU (no se pueden ver los barcos de la CPU!)
