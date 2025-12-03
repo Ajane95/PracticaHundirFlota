@@ -137,7 +137,7 @@ public class Tablero {
             System.out.print(i + " ");
             if(i <10) System.out.print(" ");
             for(int j = 0; j < tableroDisparosJugador[0].length; j++){
-                System.out.println(tableroDisparosJugador[i][j] + " ");
+                System.out.print(tableroDisparosJugador[i][j] + " ");
             }
             System.out.println();
         }
