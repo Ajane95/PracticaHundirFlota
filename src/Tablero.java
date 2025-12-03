@@ -125,4 +125,21 @@ public class Tablero {
         boolean columnaValida = columna >= 0 && columna <= columnas;
         return filaValida && columnaValida;
     }
+
+    public static void mostrarTablero(char[][] tableroDisparos){
+        System.out.print("  ");
+        for(int j = 0; j < tableroDisparos[0].length; j++){
+            System.out.print(j + " ");
+        }
+        System.out.println();
+
+        for(int i = 0; i < tableroDisparos.length; i++){
+            System.out.print(i + " ");
+            if(i <10) System.out.print(" ");
+            for(int j = 0; j < tableroDisparos[0].length; j++){
+                System.out.println(tableroDisparos[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
