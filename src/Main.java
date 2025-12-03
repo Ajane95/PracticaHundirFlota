@@ -68,6 +68,7 @@ public class Main {
 
                 System.out.println("Tus disparos sobre la CPU:");
                 // TODO: imprime los disparos sobre la CPU (no se pueden ver los barcos de la CPU!)
+                Tablero.mostrarTablero(tableroDisparosJugador);
 
 
                 // Pedir coordenada
