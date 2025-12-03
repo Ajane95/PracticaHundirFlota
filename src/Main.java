@@ -34,6 +34,13 @@ public class Main {
 
         // TODO: Inicializar los arrays impactosJugador e impactosCPU a 0
         // (aunque Java ya los inicializa a 0, hacedlo explícitamente con un for)
+        for(int i=0; i<numBarcos; i++) {
+            impactosJugador[i] = 0;
+        }
+
+        for(int i=0; i<numBarcos; i++) {
+            impactosCPU[i] = 0;
+        }
 
         // Colocar barcos
         System.out.println("Colocando barcos del jugador...");
