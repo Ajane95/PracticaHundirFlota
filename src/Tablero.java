@@ -126,18 +126,18 @@ public class Tablero {
         return filaValida && columnaValida;
     }
 
-    public static void mostrarTablero(char[][] tableroDisparos){
+    public static void mostrarTablero(char[][] tableroDisparosJugador){
         System.out.print("  ");
-        for(int j = 0; j < tableroDisparos[0].length; j++){
+        for(int j = 0; j < tableroDisparosJugador[0].length; j++){
             System.out.print(j + " ");
         }
         System.out.println();
 
-        for(int i = 0; i < tableroDisparos.length; i++){
+        for(int i = 0; i < tableroDisparosJugador.length; i++){
             System.out.print(i + " ");
             if(i <10) System.out.print(" ");
-            for(int j = 0; j < tableroDisparos[0].length; j++){
-                System.out.println(tableroDisparos[i][j] + " ");
+            for(int j = 0; j < tableroDisparosJugador[0].length; j++){
+                System.out.println(tableroDisparosJugador[i][j] + " ");
             }
             System.out.println();
         }
