@@ -153,7 +153,7 @@ public class Main {
         System.out.println("Fin de la partida.");
     }
     // TODO: Convertir la coordenada (ej. 'A5') en fila y columna (int)
-    private static int convertirFila(String coord){
+    public static int convertirFila(String coord){
         char letra = coord.charAt(0);
         switch (letra){
             case 'A': return 0;
