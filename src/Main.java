@@ -152,4 +152,45 @@ public class Main {
         sc.close();
         System.out.println("Fin de la partida.");
     }
+    // TODO: Convertir la coordenada (ej. 'A5') en fila y columna (int)
+    private static int convertirFila(String coord){
+        char letra = coord.charAt(0);
+        switch (letra){
+            case 'A': return 0;
+            case 'B': return 1;
+            case 'C': return 2;
+            case 'D': return 3;
+            case 'E': return 4;
+            case 'F': return 5;
+            case 'G': return 6;
+            case 'H': return 7;
+            case 'I': return 8;
+            case 'J': return 9;
+
+            default: return -1;
+        }
+    }
+
+    public static int convertirColumna(String coord){
+        int columna = 0;
+        for (int i = 1; i < coord.length(); i++) {
+            char digito =coord.charAt(i);
+            int valor;
+            switch (digito) {
+                case '0': valor = 0; break;
+                case '1': valor = 1; break;
+                case '2': valor = 2; break;
+                case '3': valor = 3; break;
+                case '4': valor = 4; break;
+                case '5': valor = 5; break;
+                case '6': valor = 6; break;
+                case '7': valor = 7; break;
+                case '8': valor = 8; break;
+                case '9': valor = 9; break;
+                default: return -1;
+            }
+            columna = columna * 10 + valor;
+        }
+        return columna;
+    }
 }
