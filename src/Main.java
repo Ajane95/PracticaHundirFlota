@@ -95,6 +95,19 @@ public class Main {
                 } else {
                     // TODO: usa la función de disparar para procesar el disparo.
                     // Dile al usuario si ha hundido un barco.
+                    boolean hundido = Disparos.procesarDisparo(
+                            fila,
+                            columna,
+                            tableroBarcosCPU,
+                            tableroDisparosJugador,
+                            impactosCPU,
+                            tamanosBarcos
+                    );
+                    if (hundido) {
+                        System.out.println("¡Barco hundido!");
+                    }else{
+                        System.out.println("Disparo procesado");
+                    }
                 }
 
                 // TODO: Comprobar si la CPU ha perdido todos los barcos con la función adecuada
