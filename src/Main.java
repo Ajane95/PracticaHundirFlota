@@ -8,6 +8,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        int maxFilas = 10;
+        int maxColumnas = 10;
+
         // Tamaños de los barcos (podéis cambiarlos si queréis)
         // Esto implica que hay 5 barcos de 5, 4, dos de 3, 2 casillas.
         int[] tamanosBarcos = {5, 4, 3, 3, 2};
@@ -80,12 +83,24 @@ public class Main {
                 String coord = sc.nextLine().trim().toUpperCase();
 
                 // TODO: Validar la coordenada (formato mínimo, longitud, etc.)
+                Utilidades.coordenadaValida(coord, maxFilas, maxColumnas);
+
                 // TODO: Convertir la coordenada (ej. 'A5') en fila y columna (int)
+                Utilidades.convertirFila(coord);
+                Utilidades.convertirColumna(coord);
                 // TODO: si no es una coordenada válida, hay que volver a pedirla.
-                // TODO: si el formato de la coordenada no es válido, vuelve a pedirla.
+                do{
+                    System.out.println("Introduce coordenada (ej. A5): ");
+                    coord = sc.nextLine().trim().toUpperCase();
+                }while(!Utilidades.coordenadaValida(coord,maxFilas,maxColumnas));
+
+                System.out.println("Coordenada aceptada: ");
+
                 int fila = Utilidades.convertirFila(coord);
                 int columna = Utilidades.convertirColumna(coord);
+                System.out.println("Fila: " + fila + " Columna: " + columna);
 
+                // TODO: si el formato de la coordenada no es válido, vuelve a pedirla.
                 // Cuando un jugador da una coordenada válida en formato (esto es,
                 // letra+número), pero fuera del tablero, pierde el turno
                 if (!Tablero.esCoordenadaValida(fila, columna, FILAS, COLUMNAS)) {
@@ -151,93 +166,5 @@ public class Main {
 
         sc.close();
         System.out.println("Fin de la partida.");
-    }
-    //TODO: Validar la coordenada (formato mínimo, longitud, etc.)
-    public static boolean esValida(String coord, int maxFilas, int maxColumnas) {
-        if (coord.length() < 2){
-            return false;
-        }
-
-        char letra = coord.charAt(0);
-        char[] letrasValidas ={'A','B','C','D','E','F','G','H','I','J',};
-        boolean letraValida = false;
-
-        for(int i = 0; i < letrasValidas.length; i++){
-            if(letra == letrasValidas[i]){
-                letraValida = true;
-                break;
-            }
-        }
-        if(!letraValida){
-            return false;
-        }
-        
-        char[] digitosValidos={'0','1','2','3','4','5','6','7','8','9'};
-        for(int i = 1; i < coord.length(); i++){
-            char digito = coord.charAt(i);
-            boolean digitoValido = false;
-
-            for(int j = 0; j < digitosValidos.length; j++){
-                if(digito == digitosValidos[j]){
-                    digitoValido = true;
-                    break;
-                }
-            }
-            if(!digitoValido){
-                return false;
-            }
-        }
-
-        int fila = convertirFila(coord);
-        int columna = convertirColumna(coord);
-        if(fila < 0 || fila >= maxFilas){
-            return false;
-        }
-        if(columna < 0 || columna >= maxColumnas){
-            return false;
-        }
-        return true;
-    }
-
-    // TODO: Convertir la coordenada (ej. 'A5') en fila y columna (int)
-    public static int convertirFila(String coord){
-        char letra = coord.charAt(0);
-        switch (letra){
-            case 'A': return 0;
-            case 'B': return 1;
-            case 'C': return 2;
-            case 'D': return 3;
-            case 'E': return 4;
-            case 'F': return 5;
-            case 'G': return 6;
-            case 'H': return 7;
-            case 'I': return 8;
-            case 'J': return 9;
-
-            default: return -1;
-        }
-    }
-
-    public static int convertirColumna(String coord){
-        int columna = 0;
-        for (int i = 1; i < coord.length(); i++) {
-            char digito =coord.charAt(i);
-            int valor;
-            switch (digito) {
-                case '0': valor = 0; break;
-                case '1': valor = 1; break;
-                case '2': valor = 2; break;
-                case '3': valor = 3; break;
-                case '4': valor = 4; break;
-                case '5': valor = 5; break;
-                case '6': valor = 6; break;
-                case '7': valor = 7; break;
-                case '8': valor = 8; break;
-                case '9': valor = 9; break;
-                default: return -1;
-            }
-            columna = columna * 10 + valor;
-        }
-        return columna;
     }
 }
