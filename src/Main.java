@@ -152,6 +152,53 @@ public class Main {
         sc.close();
         System.out.println("Fin de la partida.");
     }
+    //TODO: Validar la coordenada (formato mínimo, longitud, etc.)
+    public static boolean esValida(String coord, int maxFilas, int maxColumnas) {
+        if (coord.length() < 2){
+            return false;
+        }
+
+        char letra = coord.charAt(0);
+        char[] letrasValidas ={'A','B','C','D','E','F','G','H','I','J',};
+        boolean letraValida = false;
+
+        for(int i = 0; i < letrasValidas.length; i++){
+            if(letra == letrasValidas[i]){
+                letraValida = true;
+                break;
+            }
+        }
+        if(!letraValida){
+            return false;
+        }
+        
+        char[] digitosValidos={'0','1','2','3','4','5','6','7','8','9'};
+        for(int i = 1; i < coord.length(); i++){
+            char digito = coord.charAt(i);
+            boolean digitoValido = false;
+
+            for(int j = 0; j < digitosValidos.length; j++){
+                if(digito == digitosValidos[j]){
+                    digitoValido = true;
+                    break;
+                }
+            }
+            if(!digitoValido){
+                return false;
+            }
+        }
+
+        int fila = convertirFila(coord);
+        int columna = convertirColumna(coord);
+        if(fila < 0 || fila >= maxFilas){
+            return false;
+        }
+        if(columna < 0 || columna >= maxColumnas){
+            return false;
+        }
+        return true;
+    }
+
     // TODO: Convertir la coordenada (ej. 'A5') en fila y columna (int)
     public static int convertirFila(String coord){
         char letra = coord.charAt(0);
